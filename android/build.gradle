@@ -54,6 +54,10 @@ android {
 }
 
 repositories {
+  flatDir {
+    dirs "$projectDir/libs"
+  }
+
   mavenCentral()
   google()
 
@@ -125,5 +129,6 @@ repositories {
 
 dependencies {
   api 'com.facebook.react:react-native:+'
-  implementation 'io.github.jamaismagic.ffmpeg:ffmpeg-kit-main-16kb:6.1.4'
+  implementation(name: 'ffmpeg-kit-main-16kb-6.1.4', ext: 'aar')
+  implementation(name: 'smart-exception-java-0.2.1', ext: 'jar')
 }
