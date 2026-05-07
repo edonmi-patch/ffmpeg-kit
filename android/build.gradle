@@ -54,6 +54,10 @@ android {
 }
 
 repositories {
+  maven {
+    url "$projectDir/local-maven"
+  }
+
   mavenCentral()
   google()
 
@@ -125,6 +129,5 @@ repositories {
 
 dependencies {
   api 'com.facebook.react:react-native:+'
-  implementation files("$projectDir/libs/ffmpeg-kit-main-16kb-6.1.4.aar")
-  implementation files("$projectDir/libs/smart-exception-java-0.2.1.jar")
+  implementation 'com.edonmi.ffmpeg:ffmpeg-kit:6.1.4'
 }
