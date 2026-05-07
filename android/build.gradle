@@ -130,4 +130,5 @@ repositories {
 dependencies {
   api 'com.facebook.react:react-native:+'
   implementation 'com.edonmi.ffmpeg:ffmpeg-kit:6.1.4'
+  implementation 'com.edonmi.ffmpeg:smart-exception-java:0.2.1'
 }
