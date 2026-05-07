@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/arthenica/ffmpeg-kit.git", :tag => "react.native.v#{s.version}" }
 
-  s.default_subspec   = 'https'
+  s.default_subspec   = 'full-gpl'
 
   s.dependency "React-Core"
 
@@ -121,7 +121,14 @@ Pod::Spec.new do |s|
   s.subspec 'full-gpl' do |ss|
       ss.source_files      = '**/FFmpegKitReactNativeModule.m',
                              '**/FFmpegKitReactNativeModule.h'
-      ss.dependency 'ffmpeg-kit-ios-full-gpl', "6.0"
+      ss.vendored_frameworks = '../../ios/ffmpeg-kit-frameworks/6.0-80adc/ffmpegkit.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libavcodec.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libavdevice.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libavfilter.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libavformat.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libavutil.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libswresample.xcframework',
+                               '../../ios/ffmpeg-kit-frameworks/6.0-80adc/libswscale.xcframework'
       ss.ios.deployment_target = '12.1'
   end
 
